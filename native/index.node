@@ -1,0 +1,15 @@
+import('./native/index.node').then(({ getGeminiData }) => {
+    async function test() {
+      try {
+        const data = await getGeminiData();
+        console.log('API Data:', data);
+      } catch (err) {
+        console.error('Error:', err);
+      }
+    }
+  
+    test();
+  }).catch(err => {
+    console.error('Failed to load native module:', err);
+  });
+  
